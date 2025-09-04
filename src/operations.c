@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:04 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/04 15:19:33 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/04 21:23:10 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,16 @@ void rotate_a(t_stack **a)
 {
 	//t_stack *temp;
 	t_stack *last;
-	int i = 0;
+	int i;
 
 	if(*a == NULL)
 		return ;
 	last = *a;
-	while(last != NULL)
+	i = 0;
+	while(last->next != NULL)
 	{
 		last = last->next;
 		i++;
 	}
-	
 	ft_printf("%d", last->value);
 }
