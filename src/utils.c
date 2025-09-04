@@ -6,7 +6,7 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:16 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/03 16:52:19 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/04 11:55:24 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,13 @@ void init_stack(char **av, t_stack **a)
 		if (*a == NULL)
 		{
 			*a = newnode;
-			ft_printf("%d\n", newnode->value);
 			i++;
 			continue ;
 		}
 		while (tail->next != NULL)
 			tail = tail->next;
 		tail->next = newnode;
-		ft_printf("%d\n", newnode->value);
 		i++;
 	}
 }
-	
-	
+
