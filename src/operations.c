@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:04 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/04 21:23:10 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/05 10:46:15 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ void push_to_b(t_stack **a, t_stack **b)
 
 	if(*a == NULL)
 		return ;
-	temp = *a;
-	*a = temp->next;
-	temp->next = *b;
-	*b = temp;
+	temp = *a; //guarda primero nó em temp
+	*a = temp->next; // segundo nó passa para primeiro lugar
+	temp->next = *b;  // proximo nó passa a apontar pra a head da stack b
+	*b = temp; // primeiro nó da stack b passa a ter valor do antigo primero nó da stack a
+	ft_printf("%d\n", (*b)->value);
 }
 void push_to_a(t_stack **b, t_stack **a)
 {
@@ -37,18 +38,34 @@ void push_to_a(t_stack **b, t_stack **a)
 
 void rotate_a(t_stack **a)
 {
-	//t_stack *temp;
+	t_stack *temp;
 	t_stack *last;
-	int i;
 
 	if(*a == NULL)
 		return ;
+	temp = *a; //guarda o primeiro nó em temp
+	*a = (*a)->next; //o segundo nó passa para primeiro lugar
 	last = *a;
-	i = 0;
 	while(last->next != NULL)
-	{
+		last = last->next; //iterar para encontrar o ultimo nó
+	last->next = temp; //coloca antigo primeiro nó no final
+	temp->next = NULL; //antigo nó passa a ser o ultimo
+	ft_printf("%d\n", (*a)->value);
+}
+
+void rotate_b(t_stack **b)
+{
+	t_stack *temp;
+	t_stack *last;
+
+	if(*b == NULL)
+		return ;
+	temp = *b; 
+	*b = (*b)->next; 
+	last = *b;
+	while(last->next != NULL)
 		last = last->next;
-		i++;
-	}
-	ft_printf("%d", last->value);
+	last->next = temp;
+	temp->next = NULL;
+	ft_printf("%d\n", (*b)->value);
 }

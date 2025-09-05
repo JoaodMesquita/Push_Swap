@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 10:26:36 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/04 20:11:03 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/05 10:28:08 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 int main (int ac, char **av)
 {
 	t_stack	*a;
-	//t_stack	*b;
+	t_stack	*b;
 	char	**new_av;
 
 	a = NULL;
-	//b = NULL;
+	b = NULL;
 	if (ac < 2 || (ac == 2 && av[1][0] == '\0'))
 		ft_printf ("Error\nNo input given");
 	new_av = create_args(ac, av);
@@ -30,4 +30,7 @@ int main (int ac, char **av)
 	}
 	init_stack(new_av, &a);
 	rotate_a(&a);
+	push_to_b(&a, &b);
+	push_to_b(&a, &b);
+	rotate_b(&b);
 }
