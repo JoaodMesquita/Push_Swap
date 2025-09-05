@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:49:23 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/05 10:29:40 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/05 12:49:41 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	push_to_a(t_stack **a, t_stack **b);
 void	push_to_b(t_stack **b, t_stack **a);
 void	rotate_a(t_stack **a);
 void	rotate_b(t_stack **b);
+void	rev_rotate_a(t_stack **a);
 
 #endif
