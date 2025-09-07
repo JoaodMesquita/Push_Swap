@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:49:23 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/07 20:22:39 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/07 21:02:00 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ void	swap_b(t_stack **b);
 void	index_stack(t_stack *stack_a);
 int	stack_size(t_stack *stack_a);
 int	*stack_to_array(t_stack *stack_a, int size);
-
+void	simple_sort(int *arr, int size);
 #endif

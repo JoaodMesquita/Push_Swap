@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 19:46:27 by jpmesquita        #+#    #+#             */
-/*   Updated: 2025/09/07 20:40:11 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/07 21:24:59 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ void index_stack(t_stack *stack_a)
     int size = stack_size(stack_a);
     int *arr = stack_to_array(stack_a, size);
     int i;
-
+	
 	if(!arr)
-		return ;
-	simple_sort(stack_a, size);
+	return ;
+	simple_sort(arr, size);
 	
 	while (stack_a)
 	{
@@ -89,4 +89,5 @@ void index_stack(t_stack *stack_a)
 		}
 		stack_a = stack_a->next;
 	}
+	free(arr);
 }
