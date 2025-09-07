@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:49:23 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/06 10:18:47 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/07 20:22:39 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ char	**ft_split(const char *s, char c);
 long	ft_atol(char *str);
 void	init_stack(char **av, t_stack **stack);
 void	push_to_a(t_stack **a, t_stack **b);
-void	push_to_b(t_stack **b, t_stack **a);
+void	push_to_b(t_stack **a, t_stack **b);
 void	rotate_a(t_stack **a);
 void	rotate_b(t_stack **b);
 void	rev_rotate_a(t_stack **a);
-void 	swap_a(t_stack **a);
-void 	swap_b(t_stack **b);
+void	swap_a(t_stack **a);
+void	swap_b(t_stack **b);
+void	index_stack(t_stack *stack_a);
+int	stack_size(t_stack *stack_a);
+int	*stack_to_array(t_stack *stack_a, int size);
 
 #endif

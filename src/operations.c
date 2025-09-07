@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:04 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/05 10:46:15 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/07 10:37:53 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void push_to_b(t_stack **a, t_stack **b)
 	*a = temp->next; // segundo nó passa para primeiro lugar
 	temp->next = *b;  // proximo nó passa a apontar pra a head da stack b
 	*b = temp; // primeiro nó da stack b passa a ter valor do antigo primero nó da stack a
-	ft_printf("%d\n", (*b)->value);
+	ft_printf("pb\n");
 }
-void push_to_a(t_stack **b, t_stack **a)
+void push_to_a(t_stack **a, t_stack **b)
 {
 	t_stack *temp;
 
@@ -34,6 +34,7 @@ void push_to_a(t_stack **b, t_stack **a)
 	*b = temp->next;
 	temp->next = *a;
 	*a = temp;
+	ft_printf("pa\n");
 }
 
 void rotate_a(t_stack **a)
@@ -50,7 +51,7 @@ void rotate_a(t_stack **a)
 		last = last->next; //iterar para encontrar o ultimo nó
 	last->next = temp; //coloca antigo primeiro nó no final
 	temp->next = NULL; //antigo nó passa a ser o ultimo
-	ft_printf("%d\n", (*a)->value);
+	ft_printf("ra\n");
 }
 
 void rotate_b(t_stack **b)
@@ -67,5 +68,5 @@ void rotate_b(t_stack **b)
 		last = last->next;
 	last->next = temp;
 	temp->next = NULL;
-	ft_printf("%d\n", (*b)->value);
+	ft_printf("rb\n");
 }

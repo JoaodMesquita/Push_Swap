@@ -24,11 +24,7 @@ void swap_a(t_stack **a)
 	temp->next = second_node->next; // ponteiro next de N1 que apontava para N2 passa a apontar para N3; 
 	second_node->next = temp; // ponteiro next de N1 que apontava para N3 passa a apontar para N1;
 	*a = second_node; // ponteiro de N1 passa a apontar para N2;
-
-	ft_printf("%d\n", (*a)->value);
-	ft_printf("%d\n", (*a)->next->value);
-	ft_printf("%d\n", (*a)->next->next->value);
-	ft_printf("%d\n", (*a)->next->next->next->value);
+	ft_printf("sa\n");
 }
 
 void swap_b(t_stack **b)
@@ -43,11 +39,7 @@ void swap_b(t_stack **b)
 	temp->next = second_node->next; // ponteiro next de N1 que apontava para N2 passa a apontar para N3; 
 	second_node->next = temp; // ponteiro next de N1 que apontava para N3 passa a apontar para N1;
 	*b = second_node; // ponteiro de N1 passa a apontar para N2;
-
-	ft_printf("%d\n", (*b)->value);
-	ft_printf("%d\n", (*b)->next->value);
-	ft_printf("%d\n", (*b)->next->next->value);
-	ft_printf("%d\n", (*b)->next->next->next->value);
+	ft_printf("sb\n");
 }
 void	rev_rotate_a(t_stack **a)
 {
@@ -66,11 +58,7 @@ void	rev_rotate_a(t_stack **a)
 	prev->next = NULL; // atribuir ao ultimo nó o valor NULL 
 	last->next = *a; // primeiro nó passa a ser o segundo
 	*a = last; // primeiro nó passa a ser o último
-    ft_printf("%d\n", (*a)->value);
-    ft_printf("%d\n", (*a)->next->value);
-    ft_printf("%d\n", (*a)->next->next->value);
-    ft_printf("%d\n", (*a)->next->next->next->value);
-    ft_printf("%d\n", (*a)->next->next->next->next);
+    ft_printf("rra\n");
 }
 
 void	rev_rotate_b(t_stack **b)
@@ -90,9 +78,5 @@ void	rev_rotate_b(t_stack **b)
 	prev->next = NULL;
 	last->next = *b;
 	*b = last;
-    ft_printf("%d\n", (*b)->value);
-    ft_printf("%d\n", (*b)->next->value);
-    ft_printf("%d\n", (*b)->next->next->value);
-    ft_printf("%d\n", (*b)->next->next->next->value);
-    ft_printf("%d\n", (*b)->next->next->next->next);
+    ft_printf("rrb\n");
 }
