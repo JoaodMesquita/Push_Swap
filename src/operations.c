@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
+/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:04 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/07 10:37:53 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/08 14:28:06 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void push_to_b(t_stack **a, t_stack **b)
 
 	if(*a == NULL)
 		return ;
-	temp = *a; //guarda primero nó em temp
-	*a = temp->next; // segundo nó passa para primeiro lugar
-	temp->next = *b;  // proximo nó passa a apontar pra a head da stack b
-	*b = temp; // primeiro nó da stack b passa a ter valor do antigo primero nó da stack a
+	temp = *a; //guarda primero node em temp
+	*a = temp->next; // segundo node passa para primeiro lugar
+	temp->next = *b;  // proximo node passa a apontar pra a head da stack b
+	*b = temp; // primeiro node da stack b passa a ter valor do antigo primero node da stack a
 	ft_printf("pb\n");
 }
 void push_to_a(t_stack **a, t_stack **b)
@@ -44,13 +44,13 @@ void rotate_a(t_stack **a)
 
 	if(*a == NULL)
 		return ;
-	temp = *a; //guarda o primeiro nó em temp
-	*a = (*a)->next; //o segundo nó passa para primeiro lugar
+	temp = *a; //guarda o primeiro node em temp
+	*a = (*a)->next; //o segundo node passa para primeiro lugar
 	last = *a;
 	while(last->next != NULL)
-		last = last->next; //iterar para encontrar o ultimo nó
-	last->next = temp; //coloca antigo primeiro nó no final
-	temp->next = NULL; //antigo nó passa a ser o ultimo
+		last = last->next; //iterar para encontrar o ultimo node
+	last->next = temp; //coloca antigo primeiro node no final
+	temp->next = NULL; //antigo node passa a ser o ultimo
 	ft_printf("ra\n");
 }
 

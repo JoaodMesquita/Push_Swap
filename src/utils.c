@@ -3,15 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
+/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:16 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/07 20:27:32 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/08 16:06:20 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+int	smallest_node(t_stack **a)
+{	
+	int min;
+	t_stack *temp;
 
+	min = INT_MAX;
+	temp = *a;
+	while (temp)
+	{
+		if(temp->value < min)
+			min = temp->value;
+		temp = temp->next;
+	}
+	return (min);
+}
+int	biggest_node(t_stack **a)
+{	
+	int max;
+	t_stack *temp;
+
+	max = 0;
+	temp = *a;
+	while (temp)
+	{
+		if(temp->value > max)
+			max = temp->value;
+		temp = temp->next;
+	}
+	return (max);
+}
 long ft_atol(char *str)
 {
 	int i;
@@ -48,7 +77,7 @@ void init_stack(char **av, t_stack **a)
 		newnode = malloc(sizeof(t_stack));
 		if(!newnode)
 			return ;
-		newnode->value = ft_atol(av[i]);
+		newnode->value = ft_atoi(av[i]);
 		newnode->next = NULL;
 		tail = *a;
 		if (*a == NULL)

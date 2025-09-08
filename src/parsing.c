@@ -6,7 +6,7 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 10:43:59 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/03 16:14:25 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/08 10:18:29 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	max_number(char **av)
 	long	number;
 
 	i = 0;
-	number = ft_atol(av[i]);
 	while (av[i])
 	{
+		number = ft_atol(av[i]);
 		if (number > INT_MAX)
 			return (ft_printf("Error\nNumber is too high\n"), 0);
 		else if (number < INT_MIN)

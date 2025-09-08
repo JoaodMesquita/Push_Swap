@@ -91,3 +91,4 @@ void index_stack(t_stack *stack_a)
 	}
 	free(arr);
 }
+

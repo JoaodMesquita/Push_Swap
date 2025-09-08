@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 10:26:36 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/08 15:54:48 by joapedro         ###   ########.fr       */
+/*   Created: 2025/09/08 10:19:20 by joapedro          #+#    #+#             */
+/*   Updated: 2025/09/08 14:42:00 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main (int ac, char **av)
+int is_sorted(t_stack **a)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**new_av;
+	t_stack *temp;
 
-	a = NULL;
-	b = NULL;
-	if (ac < 2 || (ac == 2 && av[1][0] == '\0'))
-		ft_printf ("Error\nNo input given");
-	new_av = create_args(ac, av);
-	if (!parsing(new_av))
-		return (1);
-	init_stack(new_av, &a);
-	if (is_sorted(&a))
-		return (1);
-	index_stack(a);
-	sorting(&a, &b);
-	while(a)
+	temp = *a;
+	while(temp->next)
 	{
-		ft_printf("%d\n", a->value);
-		a = a->next;
+		if(temp->value > temp->next->value)
+			return (0);
+		temp = temp->next;
 	}
-	
-}	
+	return (1);
+}

@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+         #
+#    By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/02 10:16:30 by joapedro          #+#    #+#              #
-#    Updated: 2025/09/07 19:58:37 by jpmesquita       ###   ########.fr        #
+#    Updated: 2025/09/08 10:31:02 by joapedro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = src/main.c src/operations.c src/parsing.c src/sorting.c src/utils.c src/operations2.c src/index_stack.c
+SRC = src/main.c src/operations.c src/parsing.c src/sorting.c src/utils.c src/operations2.c src/index_stack.c src/is_sorted.c
 OBJS := $(SRC:%.c=%.o)
 
 CC = cc
