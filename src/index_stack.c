@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
+/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 19:46:27 by jpmesquita        #+#    #+#             */
-/*   Updated: 2025/09/07 21:24:59 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/09 10:36:46 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,29 +65,28 @@ void	simple_sort(int *arr, int size)
 	}
 }
 
-void index_stack(t_stack *stack_a)
+void index_stack(t_stack *a)
 {
-    int size = stack_size(stack_a);
-    int *arr = stack_to_array(stack_a, size);
+    int size = stack_size(a);
+    int *arr = stack_to_array(a, size);
     int i;
 	
 	if(!arr)
-	return ;
+		return ;
 	simple_sort(arr, size);
-	
-	while (stack_a)
+	while (a)
 	{
 		i = 0;
 		while (i < size)
 		{
-			if (stack_a->value == arr[i])
+			if (a->value == arr[i])
 			{
-				stack_a->index = i;
+				a->index = i;
 				break;
 			}
 			i++;
 		}
-		stack_a = stack_a->next;
+		a = a->next;
 	}
 	free(arr);
 }

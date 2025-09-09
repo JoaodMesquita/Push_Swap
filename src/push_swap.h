@@ -6,7 +6,7 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:49:23 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/08 15:54:36 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/09 12:44:13 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	parsing(char **av);
 int	stack_size(t_stack *stack_a);
 int	*stack_to_array(t_stack *stack_a, int size);
 int	is_sorted(t_stack **a);
+int	biggest_node(t_stack **a);
 char	**create_args(int ac, char **av);
 char	**ft_split(const char *s, char c);
 long	ft_atol(char *str);
@@ -43,6 +44,6 @@ void	swap_b(t_stack **b);
 void	index_stack(t_stack *stack_a);
 void	simple_sort(int *arr, int size);
 void	sorting(t_stack **a, t_stack **b);
-int	biggest_node(t_stack **a);
-int	smallest_node(t_stack **a);
+void	move_smallest_node(t_stack **a);
+
 #endif

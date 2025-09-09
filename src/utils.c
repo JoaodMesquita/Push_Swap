@@ -6,25 +6,39 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:16 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/08 16:06:20 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/09 12:44:05 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-int	smallest_node(t_stack **a)
-{	
+
+void	move_smallest_node(t_stack **a)
+{
 	int min;
+	int min_index;
+	int index;
 	t_stack *temp;
 
+	index = 0;
 	min = INT_MAX;
 	temp = *a;
 	while (temp)
 	{
 		if(temp->value < min)
+		{
 			min = temp->value;
+			min_index = index;
+		}
+		index++;
 		temp = temp->next;
 	}
-	return (min);
+	while ((*a)->value != min)
+	{
+		if (min_index == 1)
+			rotate_a(a);
+		else 
+			rev_rotate_a(a);
+	}
 }
 int	biggest_node(t_stack **a)
 {	
