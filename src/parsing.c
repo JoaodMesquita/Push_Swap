@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 10:43:59 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/10 11:36:00 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 18:51:57 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,24 @@ int	parsing(char **av)
 char	**create_args(int ac, char **av)
 {
 	char	**new_av;
+	int		i;
 
 	if (ac == 2)
 	{
 		new_av = ft_split(av[1], ' ');
 	}
 	else
-		new_av = av + 1;
+	{
+		new_av = malloc(ac * sizeof(char *));
+		if (!new_av)
+			return (NULL);
+		i = 1;
+		while (i < ac)
+		{
+			new_av[i - 1] = ft_strdup(av[i]);
+			i++;
+		}
+		new_av[i - 1] = NULL;
+	}
 	return (new_av);
 }

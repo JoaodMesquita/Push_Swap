@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:49:23 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/10 12:02:57 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 18:37:31 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void	simple_sort(int *arr, int size);
 void	sorting(t_stack **a, t_stack **b);
 void	move_smallest_node(t_stack **a);
 void	free_stack(t_stack **stack);
+void	free_arr(char **arr);
 
 #endif

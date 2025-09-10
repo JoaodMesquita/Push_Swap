@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:19:20 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/08 14:42:00 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 18:37:40 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int is_sorted(t_stack **a)
 			return (0);
 		temp = temp->next;
 	}
+	free_stack(a);
 	return (1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:16 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/10 12:22:13 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 18:14:06 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,14 +90,16 @@ int	max_bits(t_stack **a)
 		bits++;
 	return (bits);
 }
-void	free_stack(t_stack **stack)
-{
-	t_stack *temp;
 
-	while(*stack)
+void	free_arr(char **arr)
+{
+	int i;
+
+	i = 0;
+	while(arr[i])
 	{
-		temp = *stack;
-		*stack = (*stack)->next;
-		free(temp);
+		free(arr[i]);
+		i++;
 	}
+	free(arr);
 }

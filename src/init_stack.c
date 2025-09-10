@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 09:30:55 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/10 12:10:14 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 18:31:37 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,18 @@ void init_stack(char **av, t_stack **a)
 			tail = tail->next;
 		tail->next = newnode;
 		i++;
+	}
+	free_arr(av);
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*temp;
+
+	while(*stack)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
 	}
 }

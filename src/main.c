@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 10:26:36 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/10 12:03:51 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 18:40:49 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int main (int ac, char **av)
 		return (1);
 	new_av = create_args(ac, av);
 	if (!parsing(new_av))
+	{
+		free_arr(new_av);
 		return (ft_printf("Error\n"), 1);
+	}
 	init_stack(new_av, &a);
 	if (is_sorted(&a))
 		return (1);
