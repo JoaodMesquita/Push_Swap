@@ -6,7 +6,7 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 10:43:59 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/08 10:18:29 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 11:36:00 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ int	max_number(char **av)
 	while (av[i])
 	{
 		number = ft_atol(av[i]);
-		if (number > INT_MAX)
-			return (ft_printf("Error\nNumber is too high\n"), 0);
-		else if (number < INT_MIN)
-			return (ft_printf("Error\nNumber is too low\n"), 0);
+		if (number > INT_MAX || number < INT_MIN)
+			return (0);
 		i++;
 	}
 	return (1);
@@ -42,7 +40,7 @@ int	is_duplicate(char **av)
 		while (av[j])
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
-				return (ft_printf("Error\nCan't have duplicate numbers\n"), 0);
+				return (0);
 			j++;
 		}
 		i++;
@@ -64,7 +62,7 @@ int	is_digit(char **av)
 			if (av[i][j] == '-' || av[i][j] == '+')
 				j++;
 			if (!(av[i][j] >= '0' && av[i][j] <= '9'))
-				return (ft_printf("Error\nMust be a digit\n"), 0);
+				return (0);
 			else
 				j++;
 		}

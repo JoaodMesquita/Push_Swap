@@ -6,7 +6,7 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:10 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/09 12:46:32 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 10:35:52 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,34 @@ void	five_sort(t_stack **a, t_stack **b)
 	four_sort(a, b);
 	push_to_a(a, b);
 }
+void	radix_sort(t_stack **a, t_stack **b)
+{
+	int size;
+	int max;
+	int i;
+	int j;
+
+	size = stack_size(*a);
+	max = max_bits(a);
+	i = 0;
+	
+	while (i < max)
+	{
+		j = 0;
+		while(j < size)
+		{
+			if((((*a)->index >> i) & 1) == 1)
+				rotate_a(a);
+			else
+				push_to_b(a, b);
+			j++;
+		}
+		while(*b != NULL)
+			push_to_a(a, b);
+		i++;
+	}
+	
+} 
 void	sorting(t_stack **a, t_stack **b)
 {
 	int	size;
@@ -52,4 +80,6 @@ void	sorting(t_stack **a, t_stack **b)
 		four_sort(a, b);
 	if (size == 5)
 		five_sort(a, b);
-}
+	if (size > 5)
+		radix_sort(a, b);
+} 

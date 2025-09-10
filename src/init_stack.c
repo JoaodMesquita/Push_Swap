@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 10:26:36 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/10 12:03:51 by joapedro         ###   ########.fr       */
+/*   Created: 2025/09/10 09:30:55 by joapedro          #+#    #+#             */
+/*   Updated: 2025/09/10 12:10:14 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main (int ac, char **av)
+void init_stack(char **av, t_stack **a)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**new_av;
+	t_stack *newnode;
+	t_stack *tail;
+	int i;
 
-	a = NULL;
-	b = NULL;
-	if (ac < 2 || (ac == 2 && av[1][0] == '\0'))
-		return (1);
-	new_av = create_args(ac, av);
-	if (!parsing(new_av))
-		return (ft_printf("Error\n"), 1);
-	init_stack(new_av, &a);
-	if (is_sorted(&a))
-		return (1);
-	index_stack(a);
-	sorting(&a, &b);
-	if (a != NULL)
-		free_stack(&a);
-	if (b != NULL)
-		free_stack(&b);
-}	
+	i = 0;
+	while(av[i])
+	{
+		newnode = malloc(sizeof(t_stack));
+		if(!newnode)
+			return (free(*a));
+		newnode->value = ft_atoi(av[i]);
+		newnode->next = NULL;
+		tail = *a;
+		if (*a == NULL)
+		{
+			*a = newnode;
+			i++;
+			continue ;
+		}
+		while (tail->next != NULL)
+			tail = tail->next;
+		tail->next = newnode;
+		i++;
+	}
+}

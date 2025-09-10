@@ -6,7 +6,7 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:16 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/09 12:44:05 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/09/10 12:22:13 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,31 +79,25 @@ long ft_atol(char *str)
 	}
 	return (res * sign);
 }
-void init_stack(char **av, t_stack **a)
+int	max_bits(t_stack **a)
 {
-	t_stack *newnode;
-	t_stack *tail;
-	int i;
+	int size;
+	int bits;
 
-	i = 0;
-	while(av[i])
+	size = stack_size(*a);
+	bits = 0;
+	while (size >> bits)
+		bits++;
+	return (bits);
+}
+void	free_stack(t_stack **stack)
+{
+	t_stack *temp;
+
+	while(*stack)
 	{
-		newnode = malloc(sizeof(t_stack));
-		if(!newnode)
-			return ;
-		newnode->value = ft_atoi(av[i]);
-		newnode->next = NULL;
-		tail = *a;
-		if (*a == NULL)
-		{
-			*a = newnode;
-			i++;
-			continue ;
-		}
-		while (tail->next != NULL)
-			tail = tail->next;
-		tail->next = newnode;
-		i++;
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
 	}
 }
-
