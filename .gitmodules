@@ -1,0 +1,3 @@
+[submodule "ps_visualizer"]
+	path = ps_visualizer
+	url = https://github.com/o-reo/push_swap_visualizer.git
