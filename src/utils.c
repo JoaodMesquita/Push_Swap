@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:54:16 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/10 18:14:06 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/11 13:22:54 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	biggest_node(t_stack **a)
 	int max;
 	t_stack *temp;
 
-	max = 0;
+	max = (*a)->value;
 	temp = *a;
 	while (temp)
 	{
