@@ -6,7 +6,7 @@
 /*   By: jpmesquita <jpmesquita@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 10:43:59 by joapedro          #+#    #+#             */
-/*   Updated: 2025/09/10 18:51:57 by jpmesquita       ###   ########.fr       */
+/*   Updated: 2025/09/30 15:17:51 by jpmesquita       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,7 @@ char	**create_args(int ac, char **av)
 	int		i;
 
 	if (ac == 2)
-	{
 		new_av = ft_split(av[1], ' ');
-	}
 	else
 	{
 		new_av = malloc(ac * sizeof(char *));
