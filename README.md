@@ -24,7 +24,7 @@ This implementation uses the Radix Sort algorithm (binary-based), which is well-
 Clone the repository and compile the project:
 
 ```bash id="5h9ztr"
-git clone <your-repository-url>
+git git@github.com:JoaodMesquita/Push_Swap.git
 cd push_swap
 make
 ```
